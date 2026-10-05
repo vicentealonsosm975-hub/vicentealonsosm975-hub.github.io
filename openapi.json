@@ -1,0 +1,9 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Vicentealonsosm975-hub API",
+    "version": "1.0.0",
+    "description": "API de tienda online para desarrolladores."
+  },
+  "paths": {}
+}
