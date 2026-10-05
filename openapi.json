@@ -1,9 +1,48 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Vicentealonsosm975-hub API",
+    "title": "User Authentication & E-Commerce Store API",
     "version": "1.0.0",
-    "description": "API de tienda online para desarrolladores."
+    "description": "API para listar productos, gestionar el carrito de compras y autenticar usuarios de forma segura."
   },
-  "paths": {}
+  "servers": [
+    {
+      "url": "https://github.io"
+    }
+  ],
+  "paths": {
+    "/api/products": {
+      "get": {
+        "summary": "Listar productos",
+        "description": "Obtiene la lista completa de productos disponibles en la tienda.",
+        "responses": {
+          "200": {
+            "description": "Lista de productos obtenida con éxito."
+          }
+        }
+      }
+    },
+    "/api/auth/login": {
+      "post": {
+        "summary": "Autenticar usuario",
+        "description": "Inicia sesión en el módulo de clientes.",
+        "responses": {
+          "200": {
+            "description": "Autenticación exitosa."
+          }
+        }
+      }
+    },
+    "/api/cart": {
+      "get": {
+        "summary": "Ver carrito",
+        "description": "Obtiene los artículos agregados al carrito de compras.",
+        "responses": {
+          "200": {
+            "description": "Carrito devuelto correctamente."
+          }
+        }
+      }
+    }
+  }
 }
