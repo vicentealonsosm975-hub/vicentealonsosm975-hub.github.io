@@ -73,7 +73,7 @@
               }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Autenticación exitosa. Se retorna el token de sesión.",
