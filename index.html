@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Store & Auth API</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --accent-color: #238636;
+            --accent-hover: #2ea043;
+            --border-color: #30363d;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            width: 90%;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #8b949e;
+            margin-bottom: 30px;
+        }
+        .badge-container {
+            background: #21262d;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .endpoints {
+            text-align: left;
+            background-color: #0d1117;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .endpoints h3 {
+            margin-top: 0;
+            color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        .endpoint-item {
+            font-family: monospace;
+            font-size: 0.9rem;
+            margin: 10px 0;
+            display: flex;
+            gap: 10px;
+        }
+        .method {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.75rem;
+        }
+        .get { background-color: rgba(46, 160, 67, 0.15); color: #58a6ff; }
+        .post { background-color: rgba(216, 128, 43, 0.15); color: #d8802b; }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #8b949e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¡Bienvenido a mi API de Tienda Online!</h1>
+        <p class="subtitle">Ecosistema técnico integrado y optimizado para Agentes de Inteligencia Artificial.</p>
+        
+        <div class="badge-container">
+            <span>Estado de Prowl:</span>
+            <!-- Imagen oficial de tu insignia -->
+            <img src="https://prowl.world" alt="Prowl Score">
+        </div>
+
+        <div class="endpoints">
+            <h3>Endpoints Disponibles</h3>
+            <div class="endpoint-item">
+                <span class="method get">GET</span>
+                <span>/api/products - Catálogo de productos</span>
+            </div>
+            <div class="endpoint-item">
+                <span class="method post">POST</span>
+                <span>/api/auth/login - Autenticación de clientes</span>
+            </div>
+            <div class="endpoint-item">
+                <span class="method get">GET</span>
+                <span>/api/cart - Consultar carrito</span>
+            </div>
+            <div class="endpoint-item">
+                <span class="method post">POST</span>
+                <span>/api/cart - Añadir al carrito</span>
+            </div>
+        </div>
+
+        <a href="openapi.json" class="btn" target="_blank">Ver OpenAPI Specification</a>
+        
+        <footer>
+            Desplegado con GitHub Pages por vicentealonsosm975-hub
+        </footer>
+    </div>
+</body>
+</html>
