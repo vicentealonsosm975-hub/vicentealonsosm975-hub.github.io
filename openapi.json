@@ -3,43 +3,140 @@
   "info": {
     "title": "User Authentication & E-Commerce Store API",
     "version": "1.0.0",
-    "description": "API para listar productos, gestionar el carrito de compras y autenticar usuarios de forma segura."
+    "description": "API completa para la gestión de productos, autenticación de clientes y flujos interactivos del carrito de compras."
   },
   "servers": [
     {
-      "url": "https://github.io"
+      "url": "https://github.io",
+      "description": "Servidor de producción en GitHub Pages"
     }
   ],
   "paths": {
     "/api/products": {
       "get": {
-        "summary": "Listar productos",
-        "description": "Obtiene la lista completa de productos disponibles en la tienda.",
+        "summary": "Obtener catálogo de productos",
+        "description": "Retorna una lista paginada de los artículos disponibles en la tienda con filtros opcionales.",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Filtrar productos por categoría (ej. electrónica, ropa)",
+            "required": false,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Número máximo de resultados a retornar",
+            "required": false,
+            "schema": { "type": "integer", "default": 10 }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Lista de productos obtenida con éxito."
+            "description": "Lista de productos devuelta exitosamente.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "integer" },
+                      "name": { "type": "string" },
+                      "price": { "type": "number" },
+                      "stock": { "type": "integer" }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
     },
     "/api/auth/login": {
       "post": {
-        "summary": "Autenticar usuario",
-        "description": "Inicia sesión en el módulo de clientes.",
+        "summary": "Iniciar sesión de usuario",
+        "description": "Autentica al cliente en el sistema mediante sus credenciales y genera un token de acceso.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["email", "password"],
+                "properties": {
+                  "email": { "type": "string", "format": "email" },
+                  "password": { "type": "string", "format": "password" }
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Autenticación exitosa."
+            "description": "Autenticación exitosa. Se retorna el token de sesión.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "token": { "type": "string" },
+                    "expiresIn": { "type": "integer" }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Credenciales inválidas o acceso denegado."
           }
         }
       }
     },
     "/api/cart": {
       "get": {
-        "summary": "Ver carrito",
-        "description": "Obtiene los artículos agregados al carrito de compras.",
+        "summary": "Consultar carrito de compras",
+        "description": "Obtiene todos los artículos añadidos actualmente al carrito del usuario autenticado.",
         "responses": {
           "200": {
-            "description": "Carrito devuelto correctamente."
+            "description": "Contenido del carrito obtenido correctamente.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": { "type": "array" },
+                    "totalPrice": { "type": "number" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Añadir artículo al carrito",
+        "description": "Agrega un nuevo producto o incrementa la cantidad de un artículo existente en el carrito.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["productId", "quantity"],
+                "properties": {
+                  "productId": { "type": "integer" },
+                  "quantity": { "type": "integer", "minimum": 1 }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Producto añadido al carrito con éxito."
           }
         }
       }
