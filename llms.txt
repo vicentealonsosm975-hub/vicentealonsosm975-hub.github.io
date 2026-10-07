@@ -1,0 +1,8 @@
+# Vicentealonsosm975 Hub API
+This API provides access to an e-commerce store repository and storefront metadata.
+
+## Information
+- OpenAPI Specification: /openapi.json
+
+## Endpoints
+- GET /openapi.json: Returns the full OpenAPI 3.0 specification for this service.
