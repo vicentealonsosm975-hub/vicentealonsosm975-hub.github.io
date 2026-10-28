@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "https://github.io",
+      "url": "https://vicentealonsosm975-hub.github.io",
       "description": "Servidor de producción en GitHub Pages"
     }
   ],
