@@ -90,7 +90,14 @@
             }
           },
           "401": {
-            "description": "Credenciales inválidas o acceso denegado."
+            "description": "Credenciales inválidas o acceso denegado.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           }
         }
       }
@@ -110,6 +117,16 @@
                     "items": { "type": "array" },
                     "totalPrice": { "type": "number" }
                   }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Sesión inválida o falta de token de autenticación.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
                 }
               }
             }
@@ -137,6 +154,38 @@
         "responses": {
           "201": {
             "description": "Producto añadido al carrito con éxito."
+          },
+          "400": {
+            "description": "Solicitud incorrecta o stock insuficiente.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ErrorResponse": {
+        "type": "object",
+        "required": ["status", "error", "message"],
+        "properties": {
+          "status": {
+            "type": "integer",
+            "description": "Código de estado HTTP del error (ej. 401, 400)."
+          },
+          "error": {
+            "type": "string",
+            "description": "Identificador corto del tipo de error."
+          },
+          "message": {
+            "type": "string",
+            "description": "Descripción amigable y legible para el agente explicando la causa del fallo."
           }
         }
       }
