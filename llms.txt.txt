@@ -1,0 +1,17 @@
+# Vicente Alonso - API & Agent Hub
+
+> Plataforma centralizada de servicios y APIs optimizadas para el descubrimiento y consumo de agentes de Inteligencia Artificial (AI Agents).
+
+## APIs Disponibles
+
+- [API de Walkie-Talkie y Mensajería](https://github.io): Especificación OpenAPI completa para mensajería en tiempo real y transmisión de voz push-to-talk.
+
+## Documentación del Sistema
+
+- [Guía de Integración](https://github.io): Instrucciones paso a paso para autenticarse, obtener credenciales de prueba y consumir los endpoints.
+- [Manejo de Errores](https://github.io): Formatos estándar de respuestas de error en JSON admitidos por la plataforma.
+
+## Optional
+
+- [Portafolio de Proyectos](https://github.io): Lista de repositorios experimentales, demos y herramientas secundarias de código abierto.
+- [Contacto de Soporte](https://github.io): Información para reportar fallos o solicitar acceso extendido a la API.
