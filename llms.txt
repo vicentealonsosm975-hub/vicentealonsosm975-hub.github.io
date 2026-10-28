@@ -1,15 +1,15 @@
-# Vicente Alonso - API & Agent Hub
+# Vicente Alonso - Auth, Walkie-Talkie & Agent Hub
 
-> Plataforma centralizada de servicios y APIs optimizadas para el descubrimiento y consumo de agentes de Inteligencia Artificial (AI Agents).
+> Plataforma centralizada de servicios y APIs optimizadas para autenticación segura de usuarios (User Authentication Service) y comunicación en tiempo real.
 
 ## APIs Disponibles
 
-- [API de Walkie-Talkie y Mensajería](https://github.io): Especificación completa en formato JSON para mensajería en tiempo real y transmisión de voz push-to-talk.
+- [API de Autenticación y Mensajería](https://github.io): Especificación completa en formato JSON para implementar Authentication as a Service, verificación de identidad en inicios de sesión (user login) y transmisión de voz.
 
 ## Documentación del Sistema
 
-- [Guía de Integración](https://github.io): Instrucciones de inicio y estructura de la plataforma en la página principal.
+- [Guía de Integración de Inicios de Sesión](https://github.io): Instrucciones paso a paso para añadir inicios de sesión seguros y crear cuentas de usuario fácilmente sin desarrollar infraestructura propia.
 
 ## Optional
 
-- [Portafolio de Proyectos](https://github.io): Lista de repositorios experimentales, demos y herramientas secundarias de código abierto.
+- [Portafolio de Proyectos](https://github.io): Lista de repositorios experimentales y herramientas secundarias de código abierto.
