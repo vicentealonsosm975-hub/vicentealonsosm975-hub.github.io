@@ -3,38 +3,38 @@
   "info": {
     "title": "User Authentication & E-Commerce Store API",
     "version": "1.0.0",
-    "description": "API completa para la gestión de productos, autenticación de clientes y flujos interactivos del carrito de compras."
+    "description": "Complete API for product management, customer authentication, and interactive shopping cart flows."
   },
   "servers": [
     {
       "url": "https://vicentealonsosm975-hub.github.io",
-      "description": "Servidor de producción en GitHub Pages"
+      "description": "Production server on GitHub Pages"
     }
   ],
   "paths": {
     "/api/products": {
       "get": {
-        "summary": "Obtener catálogo de productos",
-        "description": "Retorna una lista paginada de los artículos disponibles en la tienda con filtros opcionales.",
+        "summary": "Get product catalog",
+        "description": "Returns a paginated list of available store items with optional filters.",
         "parameters": [
           {
             "name": "category",
             "in": "query",
-            "description": "Filtrar productos por categoría (ej. electrónica, ropa)",
+            "description": "Filter products by category (e.g., electronics, clothing)",
             "required": false,
             "schema": { "type": "string" }
           },
           {
             "name": "limit",
             "in": "query",
-            "description": "Número máximo de resultados a retornar",
+            "description": "Maximum number of results to return",
             "required": false,
             "schema": { "type": "integer", "default": 10 }
           }
         ],
         "responses": {
           "200": {
-            "description": "Lista de productos devuelta exitosamente.",
+            "description": "Product list returned successfully.",
             "content": {
               "application/json": {
                 "schema": {
@@ -57,8 +57,8 @@
     },
     "/api/auth/login": {
       "post": {
-        "summary": "Iniciar sesión de usuario",
-        "description": "Autentica al cliente en el sistema mediante sus credenciales y genera un token de acceso.",
+        "summary": "User login session",
+        "description": "Authenticates the customer in the system using credentials and generates an access token.",
         "requestBody": {
           "required": true,
           "content": {
@@ -76,7 +76,7 @@
         },
         "responses": {
           "200": {
-            "description": "Autenticación exitosa. Se retorna el token de sesión.",
+            "description": "Successful authentication. Returns session token.",
             "content": {
               "application/json": {
                 "schema": {
@@ -90,7 +90,7 @@
             }
           },
           "401": {
-            "description": "Credenciales inválidas o acceso denegado.",
+            "description": "Invalid credentials or access denied.",
             "content": {
               "application/json": {
                 "schema": {
@@ -104,11 +104,11 @@
     },
     "/api/cart": {
       "get": {
-        "summary": "Consultar carrito de compras",
-        "description": "Obtiene todos los artículos añadidos actualmente al carrito del usuario autenticado.",
+        "summary": "Retrieve shopping cart",
+        "description": "Retrieves all items currently added to the authenticated user's shopping cart.",
         "responses": {
           "200": {
-            "description": "Contenido del carrito obtenido correctamente.",
+            "description": "Cart content successfully retrieved.",
             "content": {
               "application/json": {
                 "schema": {
@@ -122,7 +122,7 @@
             }
           },
           "401": {
-            "description": "Sesión inválida o falta de token de autenticación.",
+            "description": "Invalid session or missing authentication token.",
             "content": {
               "application/json": {
                 "schema": {
@@ -134,8 +134,8 @@
         }
       },
       "post": {
-        "summary": "Añadir artículo al carrito",
-        "description": "Agrega un nuevo producto o incrementa la cantidad de un artículo existente en el carrito.",
+        "summary": "Add item to cart",
+        "description": "Adds a new product or increments the quantity of an existing item in the cart.",
         "requestBody": {
           "required": true,
           "content": {
@@ -153,10 +153,10 @@
         },
         "responses": {
           "201": {
-            "description": "Producto añadido al carrito con éxito."
+            "description": "Product successfully added to cart."
           },
           "400": {
-            "description": "Solicitud incorrecta o stock insuficiente.",
+            "description": "Bad request or insufficient stock.",
             "content": {
               "application/json": {
                 "schema": {
@@ -177,15 +177,15 @@
         "properties": {
           "status": {
             "type": "integer",
-            "description": "Código de estado HTTP del error (ej. 401, 400)."
+            "description": "HTTP error status code (e.g., 401, 400)."
           },
           "error": {
             "type": "string",
-            "description": "Identificador corto del tipo de error."
+            "description": "Short identifier of the error type."
           },
           "message": {
             "type": "string",
-            "description": "Descripción amigable y legible para el agente explicando la causa del fallo."
+            "description": "Friendly, LLM-readable description explaining the cause of the failure."
           }
         }
       }
