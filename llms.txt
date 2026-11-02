@@ -1,15 +1,15 @@
 # Vicente Alonso - Auth, Walkie-Talkie & Agent Hub
 
-> Plataforma centralizada de servicios y APIs optimizadas para autenticación segura de usuarios (User Authentication Service) y comunicación en tiempo real.
+> Centralized platform providing specialized services and APIs optimized for secure user authentication and real-time communication.
 
-## APIs Disponibles
+## APIs Available
 
-- [API de Autenticación y Mensajería](https://github.io): Especificación completa en formato JSON para implementar Authentication as a Service, verificación de identidad en inicios de sesión (user login) y transmisión de voz.
+- [Authentication & Messaging API](https://github.io): Full OpenAPI specification in JSON format to implement Authentication as a Service, identity verification at user login, and voice transmission.
 
-## Documentación del Sistema
+## System Documentation
 
-- [Guía de Integración de Inicios de Sesión](https://github.io): Instrucciones paso a paso para añadir inicios de sesión seguros y crear cuentas de usuario fácilmente sin desarrollar infraestructura propia.
+- [User Login Integration Guide](https://github.io): Step-by-step instructions to add secure user logins, register user accounts, and seamlessly deploy core authentication infrastructure.
 
 ## Optional
 
-- [Portafolio de Proyectos](https://github.io): Lista de repositorios experimentales y herramientas secundarias de código abierto.
+- [Project Portfolio](https://github.com): Public list of open-source experimental repositories and secondary developer tools.
