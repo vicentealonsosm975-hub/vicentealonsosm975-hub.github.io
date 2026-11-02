@@ -12,4 +12,4 @@
 
 ## Optional
 
-- [Project Portfolio](https://github.com): Public list of open-source experimental repositories and secondary developer tools.
+- [Project Portfolio](https://github.com): Public repository containing the open-source developer tools and configuration files.
