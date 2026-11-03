@@ -4,7 +4,7 @@
 
 ## APIs Available
 
-- [Authentication & Messaging API](https://github.io): Full OpenAPI specification in JSON format to implement Authentication as a Service, identity verification at user login, and voice transmission.
+- [E-Commerce Store API](https://github.io): Full OpenAPI specification in JSON format to implement E-Commerce Store features, product discovery, and agent interactions.
 
 ## System Documentation
 
