@@ -1,9 +1,9 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "Authentication & E-Commerce Store-as-a-Service API",
+    "title": "User Authentication & E-Commerce Store API",
     "version": "1.0.0",
-    "description": "Complete API for customer authentication and secure login flows."
+    "description": "Complete API for product management, customer authentication, and interactive shopping cart flows."
   },
   "servers": [
     {
@@ -12,6 +12,49 @@
     }
   ],
   "paths": {
+    "/api/products": {
+      "get": {
+        "summary": "Get product catalog",
+        "description": "Returns a paginated list of available store items with optional filters.",
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "description": "Filter products by category (e.g., electronics, clothing)",
+            "required": false,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of results to return",
+            "required": false,
+            "schema": { "type": "integer", "default": 10 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Product list returned successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": { "type": "integer" },
+                      "name": { "type": "string" },
+                      "price": { "type": "number" },
+                      "stock": { "type": "integer" }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/auth/login": {
       "post": {
         "summary": "User login session",
@@ -48,6 +91,72 @@
           },
           "401": {
             "description": "Invalid credentials or access denied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cart": {
+      "get": {
+        "summary": "Retrieve shopping cart",
+        "description": "Retrieves all items currently added to the authenticated user's shopping cart.",
+        "responses": {
+          "200": {
+            "description": "Cart content successfully retrieved.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": { "type": "array" },
+                    "totalPrice": { "type": "number" }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Invalid session or missing authentication token.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Add item to cart",
+        "description": "Adds a new product or increments the quantity of an existing item in the cart.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["productId", "quantity"],
+                "properties": {
+                  "productId": { "type": "integer" },
+                  "quantity": { "type": "integer", "minimum": 1 }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Product successfully added to cart."
+          },
+          "400": {
+            "description": "Bad request or insufficient stock.",
             "content": {
               "application/json": {
                 "schema": {
