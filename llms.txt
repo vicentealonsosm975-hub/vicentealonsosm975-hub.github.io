@@ -12,4 +12,4 @@
 
 ## Optional
 
-- [Project Portfolio](https://github.com): Public repository containing the open-source developer tools and configuration files.
+- [Project Portfolio](https://github.com/vicentealonsosm975-hub/vicentealonsosm975-hub.github.io): Public repository containing the open-source developer tools and configuration files.
