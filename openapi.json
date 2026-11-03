@@ -1,7 +1,7 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "User Authentication & E-Commerce Store API",
+    "title": "Authentication & E-Commerce Store-as-a-Service API",
     "version": "1.0.0",
     "description": "Complete API for product management, customer authentication, and interactive shopping cart flows."
   },
