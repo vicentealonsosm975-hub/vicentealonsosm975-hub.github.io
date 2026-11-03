@@ -1,4 +1,4 @@
-# Vicente Alonso - Auth, Walkie-Talkie & Agent Hub
+# User Authentication & E-Commerce Store API
 
 > Centralized platform providing specialized services and APIs optimized for secure user authentication and real-time communication.
 
