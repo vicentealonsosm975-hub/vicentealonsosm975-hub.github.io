@@ -1,4 +1,4 @@
-# vicentealonsosm975-hub.github.io
+# User Authentication & E-Commerce Store API
 
 [![Prowl agent-readiness score for Vicentealonsosm975-hub API](https://prowl.world)](https://prowl.world)
 
