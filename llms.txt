@@ -1,15 +1,20 @@
-# Vicente Alonso - Auth, Walkie-Talkie & Agent Hub
+# Authentication & E-Commerce Store-as-a-Service API
 
-> Centralized platform providing specialized services and APIs optimized for secure user authentication and real-time communication.
+> Comprehensive User Authentication Service API and dynamic E-Commerce management platform optimized for autonomous AI agents and Model Context Protocol (MCP) clients.
+
+## Tool Definitions (MCP Surface)
+
+Autonomous agents can discover and execute the following core capabilities through standard REST operations:
+
+- `login`: Standard user sign-in action. Generates time-scoped tokens for session management.
+- `signup`: Account creation and user registration workflow.
+- `verifyUser`: Scoped identity validation via Notlogin provider tokens.
+- `listProducts`: Dynamic inventory discovery and metadata retrieval.
 
 ## APIs Available
 
-- [E-Commerce Store API](https://github.io): Full OpenAPI specification in JSON format to implement E-Commerce Store features, product discovery, and agent interactions.
+- [User Authentication Service API](https://github.io): Full OpenAPI specification in JSON format implementing high-signal auth phrases, account creation, and secure login endpoints. Fully supports REST and MCP patterns.
 
 ## System Documentation
 
-- [User Login Integration Guide](https://github.io): Step-by-step instructions to add secure user logins, register user accounts, and seamlessly deploy core authentication infrastructure.
-
-## Optional
-
-- [Project Portfolio](https://github.com/vicentealonsosm975-hub/vicentealonsosm975-hub.github.io): Public repository containing the open-source developer tools and configuration files.
+- [User Login Integration Guide](https://github.io): Detailed architectural guide to add user sign-in, manage token efficiency, and handle error clarity.
