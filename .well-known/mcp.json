@@ -1,5 +1,32 @@
 {
-  "mcpVersion": "1.0.0",
-  "capabilities": {},
-  "tools": []
+  "mcpVersion": "1.0.4",
+  "capabilities": {
+    "tools": {}
+  },
+  "tools": [
+    {
+      "name": "get_products",
+      "description": "Obtiene el catálogo completo de productos disponibles en la tienda online.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "add_to_cart",
+      "description": "Añade un producto específico al carrito de compras utilizando el ID del producto y la cantidad.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "product_id": { "type": "string", "description": "El ID único del producto" },
+          "quantity": { "type": "integer", "description": "Cantidad de unidades a añadir" }
+        },
+        "required": ["product_id", "quantity"]
+      }
+    }
+  ],
+  "transport": {
+    "type": "sse",
+    "url": "https://tu-backend-real.com"
+  }
 }
