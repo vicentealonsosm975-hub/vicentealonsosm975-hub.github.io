@@ -27,6 +27,6 @@
   ],
   "transport": {
     "type": "sse",
-    "url": "https://tu-backend-real.com"
+    "url": "https://github.io"
   }
 }
